@@ -1,5 +1,5 @@
 class ScoresController < ApplicationController
-  before_action :set_score, only: [:show, :edit, :update, :destroy]
+  before_action :load_score, only: [:show, :edit, :update, :destroy]
 
   # GET /scores
   # GET /scores.json
@@ -63,7 +63,7 @@ class ScoresController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_score
+    def load_score
       @score = Score.find(params[:id])
     end
 
