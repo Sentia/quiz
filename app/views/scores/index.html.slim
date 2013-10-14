@@ -1,0 +1,17 @@
+.container.text-center
+  h1 Leaderboard
+  p.lead
+    = "Current VELedictorian is #{@scores.first.name} with #{@scores.first.points}%"
+    table.table.text-center
+      thead
+        tr
+          th.text-center Place
+          th.text-center Name
+          th.text-center Score
+      tbody
+        - @scores.each_with_index do | score, i |
+          - unless i==0
+              tr
+                td= (i+1).ordinalize
+                td= score.name
+                td= score.points
