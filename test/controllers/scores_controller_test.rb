@@ -18,7 +18,7 @@ class ScoresControllerTest < ActionController::TestCase
 
   test "should create score" do
     assert_difference('Score.count') do
-      post :create, score: { name: @score.name, score: @score.score }
+      post :create, score: { name: @score.name, points: @score.points }
     end
 
     assert_redirected_to score_path(assigns(:score))
@@ -35,7 +35,7 @@ class ScoresControllerTest < ActionController::TestCase
   end
 
   test "should update score" do
-    patch :update, id: @score, score: { name: @score.name, score: @score.score }
+    patch :update, id: @score, score: { name: @score.name, points: @score.points }
     assert_redirected_to score_path(assigns(:score))
   end
 

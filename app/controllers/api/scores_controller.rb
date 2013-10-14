@@ -1,16 +1,20 @@
 class Api::ScoresController < Api::BaseController
   before_filter :load_score, only: [:show, :update]
 
+  def index
+    expose @scores = Score.all
+  end
+
   def show
     expose @score
   end
 
   def create
-    expose Score.create!(params[:score]), status: :created
+    expose Score.create(score_params), status: :created
   end
 
   def update
-    @score.update_attributes! params[:score]
+    @score.update_attributes! score_params
     expose @score
   end
 
@@ -21,6 +25,6 @@ class Api::ScoresController < Api::BaseController
   end
 
   def score_params
-    params.require(:score).permit(:name, :score)
+    params.require(:score).permit(:name, :points)
   end
 end

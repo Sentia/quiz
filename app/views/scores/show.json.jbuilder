@@ -1,1 +1,1 @@
-json.extract! @score, :name, :score, :created_at, :updated_at
+json.extract! @score, :name, :points, :created_at, :updated_at

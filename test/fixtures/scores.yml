@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  score: 1
+  points: 1
 
 two:
   name: MyString
-  score: 1
+  points: 1

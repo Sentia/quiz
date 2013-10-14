@@ -1,3 +1,3 @@
 class Score < ActiveRecord::Base
-  validates :name, :score, presence: :true
+  validates :name, :points, presence: true
 end
