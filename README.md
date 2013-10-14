@@ -1,37 +1,34 @@
-== README
+Current API address: http://quiz-app.herokuapp.com/api/1/scores/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Quiz application provides a JSON API. The API is versioned to provide backwards compatibility for older applications.
 
-Things you may want to cover:
+## Handling Errors
 
-* Ruby version
+If the action has succeeded a HTTP status of `200 OK` or `201 Created` will be given. If there are any authorisation errors a `401 Unauthorized` will be the status. For validation errors or problems creating or updating a resource then a `422 Unprocessable Entity` will be given.
 
-* System dependencies
+All error messages are formatted in JSON. You should first check for an `error_title` and `error_message` field in the JSON response, this is shown when there are errors that do not correspond to a specific resource field. If these two fields are not present then each item in the JSON errors hash will respond to a input field for the resource.
 
-* Configuration
+Version 1 of the API provides the following actions: (Please note that the bold parameters are required for each action).
 
-* Database creation
+* [View scores](#view-scores)
+* [Create a score](#create-a-score)
+* [View scores](#view-scores)
 
-* Database initialization
+## <a name="view-scores" /> View scores
 
-* How to run the test suite
+- URL: `/api/:version/scores`
+- Method: `GET`
+- Request Params: none
+- Request Example: no request content
 
-* Services (job queues, cache servers, search engines, etc.)
+- Response Params:
+  - score[id]: the unique identifier for the score
+  - score[created_at]: the date the score was created
+  - score[updated_at]: the date the score was last updated
+  - score[name]: the name of the user who achieved the score
+  - score[points]: the number of points achieved by the user
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-** See all scores
-HTTP GET
-http://quiz-app.herokuapp.com/api/1/scores/
-
-Example response:
+- Response Example:
 ```json
 {
     "response": [
@@ -54,12 +51,15 @@ Example response:
 }
 ```
 
-** Create a score
-HTTP POST
-http://quiz-app.herokuapp.com/api/1/scores/
-Content-Type: application/json
+## <a name="create-a-score" /> Create a score
 
-Example request:
+- URL: `/api/:version/scores`
+- Method: `POST`
+- Header: `Content-Type: application/json`
+- Request Params:
+  - score[name]: the name of the user who achieved the score
+  - score[points]: the number of points achieved by the user
+- Request Example:
 ```json
 {
     "score": {
@@ -69,7 +69,14 @@ Example request:
 }
 ```
 
-Example response:
+- Response Params:
+  - score[id]: the unique identifier for the score
+  - score[created_at]: the date the score was created
+  - score[updated_at]: the date the score was last updated
+  - score[name]: the name of the user who achieved the score
+  - score[points]: the number of points achieved by the user
+
+- Response Example:
 ```json
 {
     "response": {
