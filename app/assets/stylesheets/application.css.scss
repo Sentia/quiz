@@ -15,7 +15,6 @@
 @import "twitter/bootstrap";
 
 body {
-  /*background-image: image-url('background.png');*/
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size: 100%;
@@ -28,25 +27,23 @@ h1 {
   margin-bottom: 40px;
 }
 
-table {
-  font-size: 26px;
-}
+table { font-size: 26px; }
 
-tbody {
-  font-weight: 300;
-}
+tbody { font-weight: 300; }
 
-.orange {
-  color: #f89829;
-}
+.orange { color: #f89829; }
 
-body {
+body > #scores {
   padding-top: 23%;
 }
 
 div#scores {
   width: 1000px;
-  /*margin-top: 480px;*/
   margin-left: auto;
   margin-right: auto;
+}
+
+#splash {
+  width: 100%;
+  height: 100%;
 }
