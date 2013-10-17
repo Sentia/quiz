@@ -4,6 +4,7 @@ gem 'rails', '4.0.0'
 gem 'pg'
 gem 'slim'
 
+gem 'newrelic_rpm'
 gem 'rails_12factor'
 gem 'rails_serve_static_assets'
 gem 'sass-rails', '~> 4.0.0'
