@@ -1,7 +1,7 @@
 Quiz::Application.routes.draw do
   resources :scores
 
-  root 'scores#index'
+  root 'scores#splash'
 
   namespace :api do
     api version: 1 do

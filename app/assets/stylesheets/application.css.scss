@@ -24,33 +24,29 @@ body {
 
 h1 {
   text-shadow: 2px 2px black;
-  font-size: 50px;
+  font-size: 68px;
   margin-bottom: 40px;
 }
 
 table {
   font-size: 26px;
 }
+
 tbody {
   font-weight: 300;
 }
 
-div.height-offset {
-  height: 50px;
-}
-
-div.height-offset-3x {
-  height: 200px;
-}
-
-div.nudge-left {
-  margin-left: -20px;
-}
-
-div.nudge-left-2x {
-  margin-left: -100px;
-}
-
 .orange {
   color: #f89829;
+}
+
+body {
+  padding-top: 23%;
+}
+
+div#scores {
+  width: 1000px;
+  /*margin-top: 480px;*/
+  margin-left: auto;
+  margin-right: auto;
 }
