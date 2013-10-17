@@ -15,7 +15,3 @@
 //= require turbolinks
 //= require twitter/bootstrap
 //= require_tree .
-
-$(document).ready(function() {
-  setInterval("location.reload(true)", 60000); // time in seconds * 1000
-}); 
