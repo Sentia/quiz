@@ -54,7 +54,7 @@ Version 1 of the API provides the following actions: (Please note that the bold 
 ## <a name="create-a-score" /> Create a score
 
 - URL: `/api/:version/scores`
-- Method: `PATCH/PUT`
+- Method: `POST`
 - Header: `Content-Type: application/json`
 - Request Params:
   - score[name]: the name of the user who achieved the score
@@ -91,7 +91,7 @@ Version 1 of the API provides the following actions: (Please note that the bold 
 
 ## <a name="update-a-score" /> Update a score
 - URL: `/api/:version/scores/:id`
-- Method: `POST`
+- Method: `PATCH/PUT`
 - Header: `Content-Type: application/json`
 - Request Params:
   - score[name]: the name of the user who achieved the score
