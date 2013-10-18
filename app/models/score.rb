@@ -1,5 +1,5 @@
 class Score < ActiveRecord::Base
-  default_scope order("points DESC")
+  default_scope order("points DESC, time ASC")
   default_scope limit(3)
 
   validates :name, :points, presence: true
