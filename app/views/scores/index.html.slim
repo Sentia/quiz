@@ -1,6 +1,9 @@
 .text-center#scores
   h1
-    <span class="orange">#{@scores.first.name.upcase}</span> WITH <span class="orange">#{@scores.first.points}%</span>
+    - if @scores.first
+      <span class="orange">#{@scores.first.name.upcase if @scores.first}</span> WITH <span class="orange">#{@scores.first.points if @scores.first}%</span>
+    - else
+      | YET TO BE DECIDED!
   table.table.text-center
     thead
       tr
